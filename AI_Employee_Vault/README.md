@@ -1,47 +1,47 @@
 # Car Markaz — AI Employee System
-**Owner:** Muhammad Saqib
+**Owner:** Sheikh Ali Kabir
 **Business:** Car Markaz (Car Showroom)
 **System:** Personal AI Employee powered by Claude Code
 
 ---
 
-## Yeh System Kya Hai?
+## What Is This System?
 
-Car Markaz ka AI Employee ek digital assistant hai jo aapke showroom ke daily kaam automatically karta hai:
-- Customer inquiries process karta hai
-- Vehicle listings banata hai
-- Sales reports generate karta hai
-- Files summarize karta hai
-- Har kaam ka log rakhta hai
-
----
-
-## Task Submit Kaise Karo
-
-1. `Inbox/TASK_TEMPLATE.md` ko copy karo
-2. Apna kaam likh kar `Inbox/` folder mein drop karo
-3. AI Employee automatically process karega
+Car Markaz's AI Employee is a digital assistant that automatically handles your showroom's daily tasks:
+- Processes customer inquiries
+- Creates vehicle listings
+- Generates sales reports
+- Summarizes files
+- Keeps a log of every action
 
 ---
 
-## Results Kahan Dekhein
+## How To Submit a Task
+
+1. Copy `Inbox/TASK_TEMPLATE.md`
+2. Write your task and drop it into the `Inbox/` folder
+3. The AI Employee will process it automatically
+
+---
+
+## Where To View Results
 
 | Folder | Content |
 |---|---|
-| `Plans/` | AI ke banaye hue action plans |
+| `Plans/` | Action plans created by the AI |
 | `Plans/Leads/` | Customer lead records |
 | `Plans/Listings/` | Vehicle listing drafts |
 | `Plans/Reports/` | Sales reports |
-| `Pending_Approval/` | Aapki approval chahiye in cheezon ko |
+| `Pending_Approval/` | Items waiting for your approval |
 | `Done/` | Completed tasks |
-| `Logs/` | Har action ka record |
+| `Logs/` | Record of every action |
 
 ---
 
-## Approve / Reject Kaise Karo
+## How To Approve / Reject
 
-- **Approve:** File ko `Pending_Approval/` se `Approved/` mein move karo
-- **Reject:** File ko `Pending_Approval/` se `Rejected/` mein move karo (note bhi likh do kyun reject kiya)
+- **Approve:** Move file from `Pending_Approval/` to `Approved/`
+- **Reject:** Move file from `Pending_Approval/` to `Rejected/` (also add a note explaining why)
 
 ---
 
@@ -49,17 +49,17 @@ Car Markaz ka AI Employee ek digital assistant hai jo aapke showroom ke daily ka
 
 | Skill | Use |
 |---|---|
-| `summarize-file` | Koi bhi document summarize karna |
-| `process-task` | General task process karna |
-| `customer-inquiry` | Customer ka inquiry handle karna |
-| `vehicle-listing` | Naya vehicle listing banana |
+| `summarize-file` | Summarize any document |
+| `process-task` | Process a general task |
+| `customer-inquiry` | Handle a customer inquiry |
+| `vehicle-listing` | Create a new vehicle listing |
 | `sales-report` | Daily / weekly sales report |
 
 ---
 
-## System Chalane Ka Tarika (2 Terminals)
+## How To Run The System (2 Terminals)
 
-**Terminal 1 — File Watcher (hamesha chalta rahe):**
+**Terminal 1 — File Watcher (keep running at all times):**
 ```bash
 cd C:\Users\PMLS\Documents\AI_Employee_Vault
 python file_watcher.py
@@ -80,7 +80,7 @@ Inbox/ → (file_watcher.py) → Needs_Action/ → (Claude) → Plans/ → Done/
                                                     ↓
                                            Pending_Approval/
                                                     ↓
-                                         Approved/ ya Rejected/
+                                         Approved/ or Rejected/
 ```
 
 ---
@@ -101,10 +101,10 @@ pip install watchdog
 
 ## Security Note
 
-- `Inbox/`, `Logs/`, `Done/` folders GitHub pe push nahi hongi (`.gitignore` mein hain)
-- Customer data vault ke bahar share na karo
-- Vault kisi public cloud service pe sync mat karo
+- `Inbox/`, `Logs/`, `Done/` folders will not be pushed to GitHub (they are in `.gitignore`)
+- Do not share customer data outside the vault
+- Do not sync the vault to any public cloud service
 
 ---
 
-**Car Markaz © 2026 — Muhammad Saqib**
+**Car Markaz © 2026 — Sheikh Ali Kabir**

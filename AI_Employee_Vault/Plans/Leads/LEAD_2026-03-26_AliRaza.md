@@ -17,6 +17,6 @@
 
 ## Notes
 - Customer is visiting showroom tomorrow (2026-03-27)
-- Muhammad Saqib must be present or available for negotiation
-- Final price must be confirmed by Muhammad Saqib only
+- Sheikh Ali Kabir must be present or available for negotiation
+- Final price must be confirmed by Sheikh Ali Kabir only
 - Appointment should be confirmed with customer before visit

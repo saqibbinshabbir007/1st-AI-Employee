@@ -1,10 +1,10 @@
 """
 Car Markaz — AI Employee File Watcher
-Owner: Muhammad Saqib
+Owner: Sheikh Ali Kabir
 Version: 1.0
 
-Yeh script Inbox/ folder ko watch karti hai.
-Jab koi naya .md file aaye, Claude Code ko automatically trigger karti hai.
+This script watches the Inbox/ folder.
+When a new .md file appears, it automatically triggers Claude Code.
 """
 
 import time
@@ -18,7 +18,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 # ============================================================
-# CONFIGURATION — Sirf yahan changes karo
+# CONFIGURATION — Only make changes here
 # ============================================================
 VAULT_ROOT = Path(r"E:\Agentic_PIAIC\Bronze_Tier\AI_Employee_Vault")
 CLAUDE_COMMAND = "claude"
@@ -29,10 +29,10 @@ INBOX = VAULT_ROOT / "Inbox"
 NEEDS_ACTION = VAULT_ROOT / "Needs_Action"
 LOGS = VAULT_ROOT / "Logs"
 
-# Thread lock — ek waqt mein ek hi file process hogi
+# Thread lock — only one file will be processed at a time
 processing_lock = threading.Lock()
 
-# Setup logging — terminal + daily log file mein
+# Setup logging — outputs to terminal + daily log file
 def get_log_file():
     LOGS.mkdir(exist_ok=True)
     return LOGS / f"{datetime.now().strftime('%Y-%m-%d')}.md"
@@ -51,7 +51,7 @@ def setup_logging():
 
 def log(message):
     logging.info(message)
-    # Obsidian-friendly log format bhi write karo
+    # Also write in Obsidian-friendly log format
     log_file = get_log_file()
     timestamp = datetime.now().strftime("%H:%M:%S")
     with open(log_file, "a", encoding="utf-8") as f:
@@ -66,19 +66,19 @@ class InboxHandler(FileSystemEventHandler):
 
         src = Path(event.src_path)
 
-        # Sirf .md files process karo
+        # Only process .md files
         if src.suffix.lower() != WATCH_EXTENSION:
             log(f"SKIP: Non-.md file ignored — {src.name}")
             return
 
-        # Template file ignore karo
+        # Ignore the template file
         if src.name == "TASK_TEMPLATE.md":
             return
 
-        # File write complete hone ka wait karo
+        # Wait for file write to complete
         time.sleep(0.8)
 
-        # Lock le lo — parallel processing se bacho
+        # Acquire lock — avoid parallel processing
         with processing_lock:
             self.process_file(src)
 
@@ -88,7 +88,7 @@ class InboxHandler(FileSystemEventHandler):
             return
 
         log(f"NEW TASK DETECTED: {src.name}")
-        log(f"PROCESSING: Claude Code invoke ho raha hai...")
+        log(f"PROCESSING: Invoking Claude Code...")
 
         try:
             result = subprocess.run(
@@ -110,11 +110,11 @@ class InboxHandler(FileSystemEventHandler):
                 self.move_to_needs_action(src, reason=result.stderr)
 
         except subprocess.TimeoutExpired:
-            log(f"TIMEOUT: Task '{src.name}' — 5 minute limit exceed ho gayi")
-            self.move_to_needs_action(src, reason="Claude timeout — 5 minutes se zyada laga")
+            log(f"TIMEOUT: Task '{src.name}' — 5 minute limit exceeded")
+            self.move_to_needs_action(src, reason="Claude timeout — took more than 5 minutes")
 
         except FileNotFoundError:
-            log(f"ERROR: Claude command nahi mila. 'claude --version' check karo.")
+            log(f"ERROR: Claude command not found. Check 'claude --version'.")
             self.move_to_needs_action(src, reason="Claude CLI not found on system")
 
         except Exception as e:
@@ -122,7 +122,7 @@ class InboxHandler(FileSystemEventHandler):
             self.move_to_needs_action(src, reason=str(e))
 
     def move_to_needs_action(self, src: Path, reason: str):
-        """Error hone par file ko Needs_Action mein move karo"""
+        """Move file to Needs_Action when an error occurs"""
         if not src.exists():
             return
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -137,7 +137,7 @@ class InboxHandler(FileSystemEventHandler):
 def main():
     setup_logging()
 
-    # Required folders check karo
+    # Check required folders exist
     INBOX.mkdir(exist_ok=True)
     NEEDS_ACTION.mkdir(exist_ok=True)
     LOGS.mkdir(exist_ok=True)
@@ -150,10 +150,10 @@ def main():
 
     log("=" * 55)
     log("CAR MARKAZ — AI EMPLOYEE FILE WATCHER")
-    log("Owner: Muhammad Saqib")
+    log("Owner: Sheikh Ali Kabir")
     log(f"Watching: {INBOX}")
-    log("Inbox/ mein koi bhi .md file drop karo...")
-    log("Rokne ke liye Ctrl+C dabao")
+    log("Drop any .md file into Inbox/ to begin...")
+    log("Press Ctrl+C to stop")
     log("=" * 55)
 
     try:
@@ -161,7 +161,7 @@ def main():
             time.sleep(1)
     except KeyboardInterrupt:
         observer.stop()
-        log("File Watcher band kar diya gaya.")
+        log("File Watcher has been stopped.")
         log("Car Markaz AI Employee offline.")
 
     observer.join()

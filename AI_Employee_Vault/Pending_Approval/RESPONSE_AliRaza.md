@@ -18,19 +18,19 @@ WhatsApp response draft for hot lead Ali Raza — Toyota Corolla 2022, 45 lakh b
 
 Assalam-o-Alaikum Ali Raza Bhai! 🙏
 
-Car Markaz mein khush amdeed!
+Welcome to Car Markaz!
 
-Aapki Toyota Corolla 2022 ki requirement note kar li hai.
+Your requirement for a Toyota Corolla 2022 has been noted.
 Budget: PKR 45 Lakh
 
-Hamare paas Toyota Corolla 2022 ke options available hain. Aapki visit ka intezaar hai!
+We have Toyota Corolla 2022 options available. We look forward to your visit!
 
-*Final prices Muhammad Saqib sahab se confirm hongi.*
+*Final prices will be confirmed by Sheikh Ali Kabir.*
 
-Kal ka waqt confirm kar dein — hum aapka intezaar karein ge! 😊
+Please confirm tomorrow's time — we will be expecting you! 😊
 
-Shukriya!
-Car Markaz | Muhammad Saqib
+Thank you!
+Car Markaz | Sheikh Ali Kabir
 
 ---
 
@@ -40,6 +40,6 @@ Car Markaz | Muhammad Saqib
 - Response kept general as exact stock matching not yet confirmed
 
 ## Next Steps
-1. Muhammad Saqib approve/edit this response
+1. Sheikh Ali Kabir approve/edit this response
 2. Send to customer on 0300-1234567
 3. Confirm visit time for tomorrow

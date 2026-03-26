@@ -6,71 +6,71 @@
 ---
 
 ## Purpose
-Car Markaz mein aane wali customer inquiries handle karna — WhatsApp messages, phone call notes, walk-in notes, ya online form submissions.
+Handle incoming customer inquiries at Car Markaz — WhatsApp messages, phone call notes, walk-in notes, or online form submissions.
 
 ## Trigger Conditions
-Task file mein yeh keywords hon: `customer`, `inquiry`, `buyer`, `lead`, `grahak`, `client`, `kharidaar`, `interested`
+Task file contains these keywords: `customer`, `inquiry`, `buyer`, `lead`, `grahak`, `client`, `kharidaar`, `interested`
 
 ---
 
 ## Step-by-Step Instructions
 
-**Step 1: Customer Profile Extract Karo**
-Task file se yeh information nikalo:
+**Step 1: Extract Customer Profile**
+Pull the following information from the task file:
 
 ```
-- Naam: [agar diya ho]
-- Phone Number: [agar diya ho]
+- Name: [if provided]
+- Phone Number: [if provided]
 - Inquiry Source: WhatsApp / Phone / Walk-in / Online
-- Date & Time: [kab aaya inquiry]
+- Date & Time: [when the inquiry came in]
 ```
 
-**Step 2: Customer Requirement Identify Karo**
+**Step 2: Identify Customer Requirement**
 ```
 - Vehicle Type: Sedan / SUV / Hatchback / Pickup / Van / Other
-- Brand Preference: Toyota / Honda / Suzuki / Kia / Changan / MG / Koi bhi
+- Brand Preference: Toyota / Honda / Suzuki / Kia / Changan / MG / Any
 - Budget Range: PKR [amount]
-- New ya Used: New / Used / Dono chalein
-- Urgency: Abhi lena hai / Dekh raha hoon / Future planning
-- Specific Model: [agar bataya ho]
-- Color Preference: [agar bataya ho]
-- Variant: [agar bataya ho]
+- New or Used: New / Used / Either
+- Urgency: Ready to buy now / Just looking / Future planning
+- Specific Model: [if mentioned]
+- Color Preference: [if mentioned]
+- Variant: [if mentioned]
 ```
 
-**Step 3: Company Handbook Se Match Karo**
-- Kya Car Markaz is type ki vehicle carry karta hai?
-- Kya budget realistic hai available stock ke liye?
-- Agar requirement out of stock → note karo
+**Step 3: Match Against Company Handbook**
+- Does Car Markaz carry this type of vehicle?
+- Is the budget realistic for available stock?
+- If requirement is out of stock → note it
 
-**Step 4: Lead Category Decide Karo**
+**Step 4: Decide Lead Category**
 | Category | Condition | Action |
 |---|---|---|
-| HOT LEAD | Aaj ya kal finalize karna chahta hai | Turant Pending_Approval mein bhejo |
-| WARM LEAD | Serious interest, ek hafte mein | Plans/Leads/ mein save karo |
-| COLD LEAD | Sirf dekh raha hai | Plans/Leads/ mein save karo |
+| HOT LEAD | Wants to finalize today or tomorrow | Send to Pending_Approval immediately |
+| WARM LEAD | Serious interest, within one week | Save in Plans/Leads/ |
+| COLD LEAD | Just browsing | Save in Plans/Leads/ |
 
-**Step 5: WhatsApp Response Draft Banao**
-Yeh format use karo:
+**Step 5: Draft WhatsApp Response**
+Use this format:
 
 ```
 Assalam-o-Alaikum [Customer Name]! 🙏
 
-Car Markaz mein khush amdeed!
+Welcome to Car Markaz!
 
-Aapki [Vehicle Type] ki requirement note kar li hai.
+Your requirement for a [Vehicle Type] has been noted.
 Budget: PKR [amount]
 
-Hamare paas [matching options] available hain.
-Aap kab showroom tashreef la sakte hain?
+We have [matching options] available.
+When can you visit our showroom?
 
-*Final prices Muhammad Saqib se confirm hongi.*
+*Final prices will be confirmed by Sheikh Ali Kabir.*
 
-Shukriya!
-Car Markaz | Muhammad Saqib
+Thank you!
+Car Markaz | Sheikh Ali Kabir
 ```
 
-**Step 6: Lead Record Banao**
-`Plans/Leads/LEAD_[date]_[customername].md` mein save karo:
+**Step 6: Create Lead Record**
+Save to `Plans/Leads/LEAD_[date]_[customername].md`:
 
 ```markdown
 # Lead Record: [Customer Name]
@@ -91,23 +91,23 @@ Car Markaz | Muhammad Saqib
 - [vehicle 2]
 
 ## Notes
-[koi extra info]
+[any extra info]
 ```
 
-**Step 7: Response Approval Ke Liye Bhejo**
-- Response draft ko `Pending_Approval/RESPONSE_[customername].md` mein save karo
-- Muhammad Saqib approve karein phir bhejein
-- KABHI bhi khud response mat bhejo without approval
+**Step 7: Send Response for Approval**
+- Save response draft to `Pending_Approval/RESPONSE_[customername].md`
+- Sheikh Ali Kabir must approve before sending
+- NEVER send a response without approval
 
 **Step 8: HOT LEAD Escalation**
-Agar HOT LEAD hai:
-- `Needs_Action/URGENT_[customername].md` mein move karo
-- Yeh note likho: "HOT LEAD — Muhammad Saqib ki turant attention chahiye!"
+If HOT LEAD:
+- Move to `Needs_Action/URGENT_[customername].md`
+- Write this note: "HOT LEAD — Sheikh Ali Kabir's immediate attention required!"
 
 **Step 9: Cleanup**
-- Original task file `Done/` mein move karo
-- Dashboard.md update karo
-- Log entry karo
+- Move original task file to `Done/`
+- Update Dashboard.md
+- Write log entry
 
 ---
 
@@ -117,10 +117,10 @@ Agar HOT LEAD hai:
 - HOT LEAD: `Needs_Action/URGENT_[name].md`
 
 ## Escalation Conditions
-- Customer aaj ya kal deal finalize karna chahta ho → Needs_Action URGENT
-- Customer ne competitor ka naam liya → note karo, owner ko batao
-- Customer ne price negotiate karna shuru kiya → Pending_Approval
-- Customer ka naam ya number nahi mila → Needs_Action with clarification request
+- Customer wants to finalize the deal today or tomorrow → Needs_Action URGENT
+- Customer mentioned a competitor → note it, inform the owner
+- Customer started price negotiation → Pending_Approval
+- Customer name or number not found → Needs_Action with clarification request
 
 ---
 
@@ -128,9 +128,9 @@ Agar HOT LEAD hai:
 ```
 skill: customer-inquiry
 
-Hassan Bhai ne WhatsApp kiya. Toyota Corolla 2022 2.0 Altis Grande
-chahiye. Budget 55 lakh hai. Color: white prefer hai. Kal 3 baje
-showroom aana chahte hain. Number: 0321-9876543
+Hassan Bhai sent a WhatsApp message. He wants a Toyota Corolla 2022 2.0 Altis Grande.
+Budget is 55 lakh. Color preference: white. He wants to visit the showroom tomorrow at 3 PM.
+Number: 0321-9876543
 ```
 
 ## Example Output — Lead Record
@@ -146,8 +146,8 @@ showroom aana chahte hain. Number: 0321-9876543
 - Phone: 0321-9876543
 - Requirement: Toyota Corolla 2022 2.0 Altis Grande, White
 - Budget: PKR 55,00,000
-- Urgency: Kal showroom visit — HOT
+- Urgency: Showroom visit tomorrow — HOT
 
 ## Notes
-- Kal 3 PM appointment confirm karni hai
+- Appointment for tomorrow at 3 PM needs to be confirmed
 ```

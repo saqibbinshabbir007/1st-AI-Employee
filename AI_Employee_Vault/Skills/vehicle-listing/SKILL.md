@@ -6,21 +6,21 @@
 ---
 
 ## Purpose
-Naye stock vehicle ke liye standardized listing banana. Muhammad Saqib raw notes drop kare, AI properly formatted listing banaye — WhatsApp, PakWheels, aur showroom display ke liye.
+Create a standardized listing for a new stock vehicle. Sheikh Ali Kabir drops raw notes, and the AI produces a properly formatted listing — ready for WhatsApp, PakWheels, and showroom display.
 
 ## Trigger Conditions
-Task file mein yeh keywords hon: `vehicle`, `car`, `gaadi`, `listing`, `inventory`, `stock`, `naya`, `new arrival`
+Task file contains these keywords: `vehicle`, `car`, `gaadi`, `listing`, `inventory`, `stock`, `naya`, `new arrival`
 
 ---
 
 ## Step-by-Step Instructions
 
-**Step 1: Vehicle Data Parse Karo**
-Task file se yeh information extract karo:
+**Step 1: Parse Vehicle Data**
+Extract the following information from the task file:
 
 ```
-MANDATORY FIELDS (sab zaroori hain):
-- Year: [saal]
+MANDATORY FIELDS (all required):
+- Year: [year]
 - Brand: Toyota / Honda / Suzuki / Kia / Changan / MG / Other
 - Model: [Corolla / Civic / Alto / Sportage / etc.]
 - Variant: [GLi / XLi / 1.8 / Altis / etc.]
@@ -32,39 +32,39 @@ MANDATORY FIELDS (sab zaroori hain):
 - Registration: [city] [year]
 - Condition: Excellent / Good / Fair
 - Price: PKR [amount]
-- Negotiable: Haan / Nahi
-- Photos Available: Haan / Nahi
+- Negotiable: Yes / No
+- Photos Available: Yes / No
 
 OPTIONAL FIELDS:
 - Interior Color:
-- Condition Notes: [koi nuqs ya recently repaired]
+- Condition Notes: [any defects or recent repairs]
 - Features: [sunroof / push start / etc.]
 ```
 
 **Step 2: Completeness Check**
-Agar koi MANDATORY field missing hai:
-- `Needs_Action/MISSING_INFO_[vehicle].md` mein move karo
-- Clearly list karo kaunse fields missing hain
-- STOP — incomplete listing mat banao
+If any MANDATORY field is missing:
+- Move to `Needs_Action/MISSING_INFO_[vehicle].md`
+- Clearly list which fields are missing
+- STOP — do not create an incomplete listing
 
-**Step 3: Teen Formats Mein Listing Banao**
+**Step 3: Create Listing in Three Formats**
 
 ### Format A: WhatsApp-Ready (Short)
 ```
 🚗 *[Year] [Brand] [Model] [Variant]*
-📍 Car Markaz | Muhammad Saqib
+📍 Car Markaz | Sheikh Ali Kabir
 
 ✅ [Color] | [Transmission]
 ✅ [Mileage] KM | [Registration City] Registered
 ✅ Condition: [Excellent/Good/Fair]
 
 💰 *PKR [Price]*
-[Negotiable: Haan/Nahi]
+[Negotiable: Yes/No]
 
-📸 Photos available: [Haan/Nahi]
+📸 Photos available: [Yes/No]
 📞 Call/WhatsApp: [Contact Number]
 
-_Car Markaz — Aapka Bharosa, Hamaari Zimmedari_
+_Car Markaz — Your Trust, Our Responsibility_
 ```
 
 ### Format B: PakWheels / Full Listing
@@ -92,7 +92,7 @@ _Car Markaz — Aapka Bharosa, Hamaari Zimmedari_
 [any damage, recent repairs, or special features]
 
 ### Contact
-Car Markaz | Muhammad Saqib
+Car Markaz | Sheikh Ali Kabir
 [Contact Number]
 
 *All information is accurate to the best of our knowledge.
@@ -106,25 +106,25 @@ Year,Brand,Model,Variant,Engine,Fuel,Transmission,Color,Mileage,RegCity,RegYear,
 ```
 
 **Step 4: Car Markaz Branding Check**
-Har listing mein yeh disclaimer zaroori hai:
+Every listing must include this disclaimer:
 ```
-Car Markaz — Aapka Bharosa, Hamaari Zimmedari
-Owner: Muhammad Saqib | [Contact]
-Final price Muhammad Saqib se confirm karein.
+Car Markaz — Your Trust, Our Responsibility
+Owner: Sheikh Ali Kabir | [Contact]
+Final price to be confirmed by Sheikh Ali Kabir.
 ```
 
-**Step 5: Output Save Karo**
+**Step 5: Save Output**
 File name: `YYYY-MM-DD_[Brand]_[Model]_[Year]_PKR[price].md`
 Save location: `Plans/Listings/`
 
-**Step 6: Approval Ke Liye Bhejo**
-- Listing ko `Pending_Approval/LISTING_[vehicle].md` mein bhi copy karo
-- Muhammad Saqib review karen phir publish karen
+**Step 6: Send for Approval**
+- Also copy the listing to `Pending_Approval/LISTING_[vehicle].md`
+- Sheikh Ali Kabir must review before publishing
 
 **Step 7: Cleanup**
-- Original task file `Done/` mein move karo
-- Dashboard.md update karo: "New listing ready for approval: [vehicle]"
-- Log entry karo
+- Move original task file to `Done/`
+- Update Dashboard.md: "New listing ready for approval: [vehicle]"
+- Write log entry
 
 ---
 
@@ -134,9 +134,9 @@ Save location: `Plans/Listings/`
 - Missing info: `Needs_Action/MISSING_INFO_[vehicle].md`
 
 ## Escalation Conditions
-- Koi mandatory field missing → Needs_Action
-- Price 30 lakh se zyada → owner approval zaroori before publish
-- Condition "Fair" ho → owner se confirm karo before listing
+- Any mandatory field missing → Needs_Action
+- Price above 30 lakh → owner approval required before publishing
+- Condition is "Fair" → confirm with owner before listing
 
 ---
 
@@ -157,17 +157,17 @@ Photos available
 ## Example Output (WhatsApp Format)
 ```
 🚗 *2022 Toyota Corolla Altis Grande 1.8*
-📍 Car Markaz | Muhammad Saqib
+📍 Car Markaz | Sheikh Ali Kabir
 
 ✅ White | Automatic
 ✅ 67,000 KM | Islamabad Registered 2022
 ✅ Condition: Excellent | Original Paint
 
 💰 *PKR 52,00,000*
-Negotiable: Haan
+Negotiable: Yes
 
-📸 Photos available: Haan
+📸 Photos available: Yes
 📞 Call/WhatsApp: [Contact Number]
 
-_Car Markaz — Aapka Bharosa, Hamaari Zimmedari_
+_Car Markaz — Your Trust, Our Responsibility_
 ```

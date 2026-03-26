@@ -8,7 +8,7 @@ confidence: High
 ---
 
 ## Summary
-HOT LEAD — Muhammad Saqib ki turant attention chahiye!
+HOT LEAD — Sheikh Ali Kabir's immediate attention required!
 
 ## Details
 
@@ -21,16 +21,16 @@ HOT LEAD — Muhammad Saqib ki turant attention chahiye!
 | Visit Date     | Tomorrow — 2026-03-27   |
 | Lead Type      | HOT LEAD                |
 
-## Action Required from Muhammad Saqib
+## Action Required from Sheikh Ali Kabir
 
-1. **WhatsApp response approve karo** → see `Pending_Approval/RESPONSE_AliRaza.md`
-2. **Visit time confirm karo** with customer (0300-1234567)
-3. **Stock check karo** — Toyota Corolla 2022 available hai?
-4. **Apni availability confirm karo** for tomorrow's visit (negotiation only you can handle)
+1. **Approve the WhatsApp response** → see `Pending_Approval/RESPONSE_AliRaza.md`
+2. **Confirm visit time** with customer (0300-1234567)
+3. **Check stock** — is Toyota Corolla 2022 available?
+4. **Confirm your availability** for tomorrow's visit (only you can handle negotiation)
 
 ## Assumptions
 - Customer is serious — visiting tomorrow qualifies as HOT LEAD per handbook
 - No price committed, no deal confirmed
 
 ## Next Steps
-- After Muhammad Saqib review → move to `Approved/` or `Rejected/`
+- After Sheikh Ali Kabir review → move to `Approved/` or `Rejected/`

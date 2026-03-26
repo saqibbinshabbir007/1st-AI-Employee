@@ -1,5 +1,5 @@
 # Car Markaz — AI Employee Dashboard
-**Owner:** Muhammad Saqib
+**Owner:** Sheikh Ali Kabir
 **Last Updated:** 2026-03-26 14:00
 **System Status:** Active
 
@@ -17,22 +17,22 @@
 ---
 
 ## Needs Your Approval
-> Yahan woh tasks dikhenge jo aapki approval ka intezaar kar rahe hain.
-> File ko `Approved/` ya `Rejected/` mein move karo.
+> Tasks waiting for your approval will appear here.
+> Move the file to `Approved/` or `Rejected/`.
 
 - `Pending_Approval/RESPONSE_AliRaza.md` — WhatsApp response draft for Ali Raza (HOT LEAD)
 
 ---
 
 ## Needs Your Attention
-> Yahan woh tasks dikhenge jahan Claude ko aapki madad chahiye.
+> Tasks where Claude needs your help will appear here.
 
 - `Needs_Action/URGENT_AliRaza.md` — HOT LEAD: Ali Raza visiting tomorrow (2026-03-27), Toyota Corolla 2022, 45 Lakh budget. Confirm visit time & stock availability.
 
 ---
 
 ## Recent Activity
-> Claude ke recent actions yahan log honge.
+> Claude's recent actions will be logged here.
 
 - [2026-03-26 14:00] Processed customer inquiry — Ali Raza (HOT LEAD). Lead record, response draft, and urgent escalation created.
 
@@ -40,7 +40,7 @@
 
 ## Today's Alerts
 
-- URGENT: HOT LEAD — Ali Raza (0300-1234567) Toyota Corolla 2022 visit TOMORROW. Muhammad Saqib action required.
+- URGENT: HOT LEAD — Ali Raza (0300-1234567) Toyota Corolla 2022 visit TOMORROW. Sheikh Ali Kabir action required.
 
 ---
 
@@ -68,7 +68,7 @@
 
 ---
 
-> **Note:** Obsidian Dataview plugin install karo for dynamic folder queries.
+> **Note:** Install the Obsidian Dataview plugin for dynamic folder queries.
 > Settings → Community Plugins → Browse → "Dataview" → Install & Enable
 
 ---

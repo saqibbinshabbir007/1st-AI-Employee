@@ -6,43 +6,43 @@
 ---
 
 ## Purpose
-General task processor. Jab koi aur specific skill match nahi hoti toh yeh fallback skill use hoti hai. Task break down karke plan banata hai.
+General task processor. This fallback skill is used when no other specific skill matches. It breaks down the task and creates a plan.
 
 ## Trigger Conditions
-Task file mein yeh keywords hon: `task`, `todo`, `action`, `kaam`, `karo`, ya koi specific skill tag nahi ho
+Task file contains these keywords: `task`, `todo`, `action`, `kaam`, `karo`, or no specific skill tag is present
 
 ---
 
 ## Step-by-Step Instructions
 
-**Step 1: Task Parho**
-- Task file ki puri content parho
-- Company_Handbook.md se business rules confirm karo
+**Step 1: Read the Task**
+- Read the full content of the task file
+- Confirm business rules from Company_Handbook.md
 
-**Step 2: Task Analyze Karo**
-Identify karo:
-- Kya karna hai? (main objective)
-- Kaun karega? (AI / Owner Muhammad Saqib / dono)
-- Kab tak karna hai? (deadline)
-- Priority kya hai?
+**Step 2: Analyze the Task**
+Identify:
+- What needs to be done? (main objective)
+- Who will do it? (AI / Owner Sheikh Ali Kabir / both)
+- When does it need to be done? (deadline)
+- What is the priority?
 
 **Priority Rules:**
 | Priority | Condition |
 |---|---|
-| HIGH | Customer same day / urgent / owner ne kaha |
-| MEDIUM | 24 ghante ke andar |
-| LOW | 1 week ke andar |
+| HIGH | Customer same day / urgent / owner requested |
+| MEDIUM | Within 24 hours |
+| LOW | Within 1 week |
 
-**Step 3: Check Karo Koi Specific Skill Match Hoti Hai?**
-- Customer ka zikar → `customer-inquiry` skill suggest karo
-- Vehicle / car ka zikar → `vehicle-listing` skill suggest karo
-- Report / sales ka zikar → `sales-report` skill suggest karo
-- Summary chahiye → `summarize-file` skill suggest karo
+**Step 3: Check If a Specific Skill Matches**
+- Mention of a customer → suggest `customer-inquiry` skill
+- Mention of a vehicle / car → suggest `vehicle-listing` skill
+- Mention of report / sales → suggest `sales-report` skill
+- Summary needed → suggest `summarize-file` skill
 
-Agar match mile → note karo plan mein ke "Yeh task [skill-name] skill se better handle hoga"
+If a match is found → note in the plan: "This task would be better handled by the [skill-name] skill"
 
-**Step 4: Plan Banao**
-`Plans/PLAN_[taskname].md` mein yeh format use karo:
+**Step 4: Create a Plan**
+Use this format in `Plans/PLAN_[taskname].md`:
 
 ```markdown
 # Plan: [Task Name]
@@ -52,7 +52,7 @@ Agar match mile → note karo plan mein ke "Yeh task [skill-name] skill se bette
 **Estimated Steps:** [number]
 
 ## Objective
-[kya achieve karna hai]
+[what needs to be achieved]
 
 ## Steps
 - [ ] Step 1: ...
@@ -60,32 +60,32 @@ Agar match mile → note karo plan mein ke "Yeh task [skill-name] skill se bette
 - [ ] Step 3: ...
 
 ## Owner Decision Required?
-YES / NO — [reason agar yes]
+YES / NO — [reason if yes]
 
 ## Status: In Progress
 ```
 
-**Step 5: Execute Karo**
-- Plan ke steps ek ek follow karo
-- Agar koi step owner decision maange → RUKO, file `Pending_Approval/` mein move karo
+**Step 5: Execute**
+- Follow the plan steps one by one
+- If any step requires an owner decision → STOP, move file to `Pending_Approval/`
 
 **Step 6: Complete**
-- Original task `Done/` mein move karo
-- Plan file bhi `Done/` mein move karo
-- Dashboard.md update karo
-- Log entry karo
+- Move original task to `Done/`
+- Move plan file to `Done/` as well
+- Update Dashboard.md
+- Write log entry
 
 ---
 
 ## Output Destination
 - Plan: `Plans/PLAN_[taskname].md`
-- Agar owner decision chahiye: `Pending_Approval/`
+- If owner decision required: `Pending_Approval/`
 - Complete: `Done/`
 
 ## Escalation Conditions
-- Koi bhi financial decision → `Pending_Approval/`
-- Koi bhi customer commitment → `Pending_Approval/`
-- Task unclear ho → `Needs_Action/` with clarification request
+- Any financial decision → `Pending_Approval/`
+- Any customer commitment → `Pending_Approval/`
+- Task is unclear → `Needs_Action/` with clarification request
 
 ---
 
@@ -94,8 +94,8 @@ YES / NO — [reason agar yes]
 skill: process-task
 priority: medium
 
-Kal ke liye showroom ki cleaning arrange karni hai aur
-naye aaye hue 3 vehicles ki photos leni hain.
+Need to arrange showroom cleaning for tomorrow and
+take photos of the 3 newly arrived vehicles.
 ```
 
 ## Example Output Plan
@@ -105,11 +105,11 @@ naye aaye hue 3 vehicles ki photos leni hain.
 **Priority:** MEDIUM
 
 ## Steps
-- [ ] Step 1: Cleaning staff ko call karein (Owner task)
-- [ ] Step 2: 3 naye vehicles identify karein
-- [ ] Step 3: Har vehicle ki photos lein (front, back, interior)
-- [ ] Step 4: Photos folder mein save karein
+- [ ] Step 1: Call cleaning staff (Owner task)
+- [ ] Step 2: Identify the 3 new vehicles
+- [ ] Step 3: Take photos of each vehicle (front, back, interior)
+- [ ] Step 4: Save photos in the photos folder
 
 ## Owner Decision Required?
-YES — Cleaning staff contact number owner ke paas hai
+YES — Cleaning staff contact number is with the owner
 ```

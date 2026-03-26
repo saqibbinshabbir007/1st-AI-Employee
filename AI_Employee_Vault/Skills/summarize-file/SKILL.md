@@ -6,37 +6,37 @@
 ---
 
 ## Purpose
-Koi bhi document (email, WhatsApp chat, meeting notes, supplier message) ko parh kar ek clean summary banana.
+Read any document (email, WhatsApp chat, meeting notes, supplier message) and produce a clean summary.
 
 ## Trigger Conditions
-Task file mein yeh keywords hon: `summarize`, `summary`, `brief`, `khulasa`, `batao kya hai`
+Task file contains these keywords: `summarize`, `summary`, `brief`, `khulasa`, `batao kya hai`
 
 ## Input Requirements
-- Task file mein document content ya file reference hona chahiye
+- Task file must contain document content or a file reference
 
 ---
 
 ## Step-by-Step Instructions
 
-**Step 1: Document Parho**
-- Task file ki puri content parho
-- Document type identify karo (email / WhatsApp / meeting notes / report / other)
+**Step 1: Read the Document**
+- Read the full content of the task file
+- Identify the document type (email / WhatsApp / meeting notes / report / other)
 
-**Step 2: Key Information Nikalo**
-- Main topic kya hai?
-- 3–5 key points kya hain?
-- Koi action items hain?
-- Koi deadlines mention hain?
-- Koi customer ka naam ya phone number hai? (Car Markaz ke liye important)
-- Koi vehicle ka naam ya price mention hai?
+**Step 2: Extract Key Information**
+- What is the main topic?
+- What are the 3–5 key points?
+- Are there any action items?
+- Are any deadlines mentioned?
+- Is there a customer name or phone number? (important for Car Markaz)
+- Is any vehicle name or price mentioned?
 
-**Step 3: Summary Likho**
-Yeh format use karo:
+**Step 3: Write the Summary**
+Use this format:
 
 ```markdown
 ## Summary
 **Document Type:** [email / WhatsApp / meeting / report / other]
-**Overview:** [ek sentence mein pura document]
+**Overview:** [entire document in one sentence]
 
 **Key Points:**
 - [point 1]
@@ -44,25 +44,25 @@ Yeh format use karo:
 - [point 3]
 
 **Action Items:**
-- [ ] [action agar koi ho]
+- [ ] [action if any]
 
 **Important Names/Numbers:**
-- [customer name / phone agar mila]
+- [customer name / phone if found]
 
 **Vehicle Mentions:**
-- [koi gaadi ka zikar agar hua]
+- [any vehicle mentioned]
 
 **Deadlines:**
-- [koi deadline agar mention ki]
+- [any deadline mentioned]
 ```
 
-**Step 4: Output Save Karo**
-- Summary file ko `Done/SUMMARY_[original-filename]` ke naam se save karo
+**Step 4: Save Output**
+- Save the summary file as `Done/SUMMARY_[original-filename]`
 
 **Step 5: Cleanup**
-- Original task file `Done/` mein move karo
-- Dashboard.md update karo
-- Log entry karo
+- Move original task file to `Done/`
+- Update Dashboard.md
+- Write log entry
 
 ---
 
@@ -70,8 +70,8 @@ Yeh format use karo:
 `Done/SUMMARY_[taskname].md`
 
 ## Escalation Conditions
-- Agar document mein koi sensitive financial information ho → `Pending_Approval/` mein move karo
-- Agar customer contact details milein → lead bhi `Plans/Leads/` mein save karo
+- If the document contains sensitive financial information → move to `Pending_Approval/`
+- If customer contact details are found → also save a lead in `Plans/Leads/`
 
 ---
 
@@ -79,24 +79,24 @@ Yeh format use karo:
 ```
 skill: summarize-file
 
-Ahmed Bhai ne call kiya tha. Woh Toyota Corolla 2022 lena chahte hain.
-Budget 45 lakh hai. Number 0300-1234567. Kal showroom aana chahte hain.
+Ahmed Bhai called. He wants to buy a Toyota Corolla 2022.
+Budget is 45 lakh. Number 0300-1234567. He wants to visit the showroom tomorrow.
 ```
 
 ## Example Output
 ```markdown
 ## Summary
 **Document Type:** Phone Call Note
-**Overview:** Ahmed Bhai Toyota Corolla 2022 kharidna chahte hain, budget 45 lakh, kal visit.
+**Overview:** Ahmed Bhai is looking to buy a Toyota Corolla 2022 with a budget of 45 lakh and plans to visit tomorrow.
 
 **Key Points:**
-- Toyota Corolla 2022 ki talash mein hain
+- Looking for Toyota Corolla 2022
 - Budget: PKR 45,00,000
-- Kal showroom visit planned
+- Showroom visit planned for tomorrow
 
 **Action Items:**
-- [ ] Ahmed Bhai ko confirm call karein
-- [ ] Corolla 2022 options ready karein
+- [ ] Call Ahmed Bhai to confirm
+- [ ] Prepare Corolla 2022 options
 
 **Important Names/Numbers:**
 - Ahmed Bhai: 0300-1234567

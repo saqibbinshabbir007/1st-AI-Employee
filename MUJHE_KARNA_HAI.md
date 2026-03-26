@@ -1,4 +1,4 @@
-# Muhammad Saqib — My To-Do Guide
+# Sheikh Ali Kabir — My To-Do Guide
 **Car Markaz AI Employee System**
 _Read this file to remember everything_
 
@@ -114,7 +114,7 @@ claude
 
 ---
 
-## Questions For Jani (Claude)
+## Questions For Claude
 
 - [ ] How to save updates to GitHub
 - [ ] How to create more skills
@@ -123,5 +123,5 @@ claude
 
 ---
 
-_This file was created by Claude Code (Jani) for Muhammad Saqib — 2026-03-26_
+_This file was created by Claude Code for Sheikh Ali Kabir — 2026-03-26_
 _Car Markaz — Your Trust, Our Responsibility_
