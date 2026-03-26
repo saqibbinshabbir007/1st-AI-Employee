@@ -1,0 +1,29 @@
+# Obsidian workspace metadata
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache
+
+# Sensitive Car Markaz business data
+Inbox/
+Logs/
+Done/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+env/
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Secrets
+*.key
+*.secret
+secrets.md
+credentials.json
+*.token
