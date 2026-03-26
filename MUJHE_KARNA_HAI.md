@@ -1,127 +1,127 @@
-# Muhammad Saqib — Mujhe Karna Hai
+# Muhammad Saqib — My To-Do Guide
 **Car Markaz AI Employee System**
-_Yeh file parh ke sab yaad aa jayega_
+_Read this file to remember everything_
 
 ---
 
-## System Kahan Hai
+## Where Is The System
 ```
 E:\Agentic_PIAIC\Bronze_Tier\AI_Employee_Vault\
 ```
 
 ---
 
-## Roz System Chalane Ka Tarika
+## How To Run The System Daily
 
-### Terminal 1 kholo — Watcher start karo:
+### Terminal 1 — Start the File Watcher:
 ```
 cd E:\Agentic_PIAIC\Bronze_Tier\AI_Employee_Vault
 python file_watcher.py
 ```
 
-### Terminal 2 kholo — Claude start karo:
+### Terminal 2 — Start Claude:
 ```
 cd E:\Agentic_PIAIC\Bronze_Tier\AI_Employee_Vault
 claude
 ```
 
-### Obsidian kholo:
+### Open Obsidian:
 - Vault: `E:\Agentic_PIAIC\Bronze_Tier\AI_Employee_Vault`
-- Subah **Dashboard.md** dekho
+- Every morning open **Dashboard.md** to check status
 
 ---
 
-## Kaam Kaise Karo (Daily Routine)
+## How To Use Daily
 
-### 1. Koi Customer Inquiry Aaye:
-- `Inbox/` mein naya file banao (TASK_TEMPLATE.md copy karo)
-- `skill: customer-inquiry` likho
-- Customer ki details likho
-- Save karo — Atlas khud process karega
+### 1. Customer Inquiry Received:
+- Copy `Inbox/TASK_TEMPLATE.md` → rename it
+- Write `skill: customer-inquiry`
+- Add customer details (name, phone, requirement, budget)
+- Save — Atlas will process it automatically
 
-### 2. Naya Vehicle List Karna Ho:
-- `Inbox/` mein file banao
-- `skill: vehicle-listing` likho
-- Vehicle ki details likho (year, brand, model, price etc.)
-- Save karo — Atlas listing banayega
+### 2. List a New Vehicle:
+- Create new file in `Inbox/`
+- Write `skill: vehicle-listing`
+- Add vehicle details (year, brand, model, price, mileage etc.)
+- Save — Atlas will create the listing
 
-### 3. Daily Report Chahiye:
-- `Inbox/` mein file banao
-- `skill: sales-report` likho
-- Din bhar ki sales data likho
-- Save karo — Atlas report banayega
+### 3. Need a Daily/Weekly Report:
+- Create new file in `Inbox/`
+- Write `skill: sales-report`
+- Add today's sales data
+- Save — Atlas will generate the report
 
-### 4. Kuch Summarize Karna Ho:
-- `Inbox/` mein file banao
-- `skill: summarize-file` likho
-- Content paste karo
-- Save karo — Atlas summary banayega
+### 4. Summarize Any Document:
+- Create new file in `Inbox/`
+- Write `skill: summarize-file`
+- Paste the content
+- Save — Atlas will summarize it
 
 ---
 
-## Approve / Reject Kaise Karo
+## How To Approve / Reject
 
-| Kaam | Kahan Jao |
+| Action | Where To Go |
 |---|---|
-| Atlas ka response check karo | `Pending_Approval/` folder |
-| Approve karna ho | File ko `Approved/` mein move karo |
-| Reject karna ho | File ko `Rejected/` mein move karo (reason likho) |
-| Urgent kaam | `Needs_Action/` folder check karo |
+| Check Atlas's response | `Pending_Approval/` folder |
+| To approve | Move file to `Approved/` |
+| To reject | Move file to `Rejected/` (add a reason) |
+| Urgent tasks | Check `Needs_Action/` folder |
 
 ---
 
 ## Available Skills (5 Skills)
 
-| Skill | Kab Use Karo |
+| Skill | When To Use |
 |---|---|
-| `customer-inquiry` | Koi customer inquiry aaye |
-| `vehicle-listing` | Naya vehicle list karna ho |
-| `sales-report` | Daily ya weekly report |
-| `summarize-file` | Koi document summarize karna |
-| `process-task` | Koi bhi general kaam |
+| `customer-inquiry` | Any customer inquiry |
+| `vehicle-listing` | List a new vehicle |
+| `sales-report` | Daily or weekly report |
+| `summarize-file` | Summarize any document |
+| `process-task` | Any general task |
 
 ---
 
 ## Important Files
 
-| File | Kaam |
+| File | Purpose |
 |---|---|
-| `Dashboard.md` | Roz subah yeh kholo — sab status yahan |
-| `Company_Handbook.md` | Business rules — zaroorat pare toh edit karo |
-| `CLAUDE.md` | Atlas ki instructions — chhedna mat |
-| `file_watcher.py` | Watcher script — sirf run karo |
+| `Dashboard.md` | Open every morning — all status here |
+| `Company_Handbook.md` | Business rules — edit when needed |
+| `CLAUDE.md` | Atlas's instructions — do not modify |
+| `file_watcher.py` | Watcher script — just run it |
 
 ---
 
-## Abhi Jo Pending Hai (Aaj Ka Kaam)
+## Today's Pending Tasks
 
-- [ ] `Pending_Approval/RESPONSE_AliRaza.md` — Ali Raza ka WhatsApp response approve karo
-- [ ] Ali Raza ko call karo: **0300-1234567** — kal ki visit confirm karo
-- [ ] Toyota Corolla 2022 stock check karo
-- [ ] Obsidian mein **Dataview plugin** install karo (Dashboard better dikhega)
-  - Settings → Community Plugins → Browse → "Dataview" → Install
+- [ ] `Pending_Approval/RESPONSE_AliRaza.md` — Approve Ali Raza's WhatsApp response
+- [ ] Call Ali Raza: **0300-1234567** — Confirm tomorrow's visit
+- [ ] Check Toyota Corolla 2022 stock availability
+- [ ] Install **Dataview plugin** in Obsidian (Dashboard will look better)
+  - Settings → Community Plugins → Browse → "Dataview" → Install & Enable
 
 ---
 
-## Agar Kuch Kaam Na Kare
+## Troubleshooting
 
 | Problem | Solution |
 |---|---|
-| `python` command nahi chala | `python3 file_watcher.py` try karo |
-| `claude` command nahi chala | Terminal band kar ke dobara kholo |
-| Obsidian mein files nahi dikh rahi | Kisi aur folder pe click karo aur wapas aao |
-| Watcher file detect nahi kar raha | Dekho Terminal 1 chal raha hai ya nahi |
+| `python` command not working | Try `python3 file_watcher.py` |
+| `claude` command not working | Close terminal and reopen |
+| Files not showing in Obsidian | Click another folder and come back |
+| Watcher not detecting files | Check Terminal 1 is still running |
 
 ---
 
-## Jani Se Aur Pouchna Hai
+## Questions For Jani (Claude)
 
-- [ ] GitHub pe system kaise save karein
-- [ ] Aur skills kaise banayein
-- [ ] Mobile se kaise use karein
-- [ ] Koi aur sawaal...
+- [ ] How to save updates to GitHub
+- [ ] How to create more skills
+- [ ] How to use from mobile
+- [ ] Anything else...
 
 ---
 
-_Yeh file Claude Code (Jani) ne Muhammad Saqib ke liye banai — 2026-03-26_
-_Car Markaz — Aapka Bharosa, Hamaari Zimmedari_
+_This file was created by Claude Code (Jani) for Muhammad Saqib — 2026-03-26_
+_Car Markaz — Your Trust, Our Responsibility_
